@@ -1,0 +1,45 @@
+import 'dart:ui';
+
+extension StringExtension on String? {
+  // Check null string, return given value if null
+  String validate({String value = ''}) {
+    if (this == null && this!.isEmpty) {
+      return value;
+    } else {
+      return this!;
+    }
+  }
+
+  /// Splits from a [pattern] and returns remaining String after that
+  String splitAfter(Pattern pattern) {
+    ArgumentError.checkNotNull(pattern, 'pattern');
+    var matchIterator = pattern.allMatches(this!).iterator;
+
+    if (matchIterator.moveNext()) {
+      var match = matchIterator.current;
+      var length = match.end - match.start;
+      return validate().substring(match.start + length);
+    }
+    return '';
+  }
+
+  /// Splits from a [pattern] and returns String before that
+  String splitBefore(Pattern pattern) {
+    ArgumentError.checkNotNull(pattern, 'pattern');
+    var matchIterator = pattern.allMatches(validate()).iterator;
+
+    Match? match;
+    while (matchIterator.moveNext()) {
+      match = matchIterator.current;
+    }
+
+    if (match != null) {
+      return validate().substring(0, match.start);
+    }
+    return '';
+  }
+}
+
+extension ColorWithUtils on Color {
+  Color withOpacityValue(double opacity) => withAlpha((opacity * 255).round());
+}
