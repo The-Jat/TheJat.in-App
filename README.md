@@ -4,10 +4,6 @@ NewsPro is an awesome news app that uses your existing WordPress admin panel and
 
 ![Logo](./assets/others/logo.png)
 
-## Authors
-
-- [@abdulmominsakib](https://www.github.com/abdulmominsakib)
-
 ## Features
 
 ![image1](https://i.imgur.com/MR7hJ5P.png)
