@@ -21,3 +21,16 @@ NewsPro is an awesome news app that uses your existing WordPress admin panel and
 **Client:** Flutter
 
 **Server:** PHP, WordPress
+
+
+## Build Instructions
+
+### Install Dependencies
+```dart
+flutter pub get
+```
+
+### Run the App for Testing
+```dart
+flutter run
+```
