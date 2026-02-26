@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../controllers/ad/ad_controller.dart';
-import '../controllers/config/config_controllers.dart';
-import '../models/article.dart';
+import '../ads/ad_controller.dart';
+import '../../features/config/providers/config_providers.dart';
+import '../../features/posts/data/models/article_model.dart';
 import '../utils/responsive.dart';
 
 class ResponsiveListView extends ConsumerWidget {

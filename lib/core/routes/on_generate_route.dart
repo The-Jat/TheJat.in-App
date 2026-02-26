@@ -1,26 +1,27 @@
 import 'package:flutter/cupertino.dart';
 
-import '../../views/auth/forgot_password_page.dart';
-import '../../views/auth/login_animation.dart';
-import '../../views/auth/login_intro_page.dart';
-import '../../views/auth/login_page.dart';
-import '../../views/auth/signup_page.dart';
-import '../../views/base/base_page.dart';
-import '../../views/base/loading_app_page.dart';
-import '../../views/explore/all_authors_page.dart';
-import '../../views/explore/author_page.dart';
-import '../../views/explore/category_page.dart';
-import '../../views/explore/search_page.dart';
-import '../../views/explore/tag_posts_page.dart';
-import '../../views/home/notification_page/notification_page.dart';
-import '../../views/home/post_page/comment_page.dart';
-import '../../views/home/post_page/components/view_post_image_full_screen.dart';
-import '../../views/home/post_page/post_page.dart';
-import '../../views/onboarding/select_language_theme_page.dart';
-import '../../views/settings/information_page.dart';
-import '../models/article.dart';
-import '../models/author.dart';
-import '../models/post_tag.dart';
+import '../../features/auth/data/models/author.dart';
+import '../../features/auth/views/forgot_password_page.dart';
+import '../../features/auth/views/login_animation.dart';
+import '../../features/auth/views/login_intro_page.dart';
+import '../../features/auth/views/login_page.dart';
+import '../../features/auth/views/signup_page.dart';
+import '../../features/base/views/base_page.dart';
+import '../../features/base/views/loading_app_page.dart';
+import '../../features/categories/views/category_page.dart';
+import '../../features/comments/views/comment_page.dart';
+import '../../features/explore/views/all_authors_page.dart';
+import '../../features/explore/views/author_page.dart';
+import '../../features/explore/views/search_page.dart';
+import '../../features/notification/views/notification_page.dart';
+import '../../features/onboarding/views/select_language_theme_page.dart';
+import '../../features/posts/data/models/article_model.dart';
+import '../../features/posts/views/components/view_post_image_full_screen.dart';
+import '../../features/posts/views/post_page.dart';
+import '../../features/recommendation/views/select_preference_page.dart';
+import '../../features/settings/views/information_page.dart';
+import '../../features/tag/data/models/post_tag.dart';
+import '../../features/tag/views/tag_posts_page.dart';
 import 'app_routes.dart';
 import 'unknown_page.dart';
 
@@ -114,6 +115,9 @@ class RouteGenerator {
 
       case AppRoutes.allAuthors:
         return CupertinoPageRoute(builder: (_) => const AllAuthorsPage());
+
+      case AppRoutes.selectYourPreference:
+        return CupertinoPageRoute(builder: (_) => const SelectPreferencePage());
 
       default:
         return errorRoute();

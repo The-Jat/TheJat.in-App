@@ -10,6 +10,8 @@ flutter pub run flutter_launcher_icons:main
 <!-- BUILD APK FOR TEST -->
 flutter build apk --split-per-abi --obfuscate --split-debug-info=./private/data/
 
+flutter build apk --obfuscate --split-debug-info=./private/data/
+
 flutter build apk --target-platform android-arm64
 
 <!-- BUILD APPBUNDLE FOR RELEASE in Playstore (Android) -->

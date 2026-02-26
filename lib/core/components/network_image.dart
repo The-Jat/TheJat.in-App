@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../constants/app_defaults.dart';
-import '../controllers/internet/internet_state_provider.dart';
+import '../../features/internet/internet_state_provider.dart';
 import 'skeleton.dart';
 
 class NetworkImageWithLoader extends ConsumerWidget {
@@ -33,7 +33,7 @@ class NetworkImageWithLoader extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final internetState = ref.watch(connectivityProvider).internetState;
+    final internetState = ref.watch(internetStateProvider);
     final isOffline = internetState == InternetState.disconnected;
 
     return ClipRRect(

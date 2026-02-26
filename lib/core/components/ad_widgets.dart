@@ -9,7 +9,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import '../../config/ad_config.dart';
 import '../../config/wp_config.dart';
 import '../constants/constants.dart';
-import '../controllers/config/config_controllers.dart';
+import '../../features/config/providers/config_providers.dart';
 import '../themes/theme_manager.dart';
 
 class BannerAdWidget extends ConsumerWidget {

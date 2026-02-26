@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
 
 import '../../../../core/constants/constants.dart';
-import '../models/article.dart';
+import '../../features/posts/data/models/article_model.dart';
 import '../routes/app_routes.dart';
 import '../utils/app_utils.dart';
 import 'article_category_row.dart';

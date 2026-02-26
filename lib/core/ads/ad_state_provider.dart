@@ -2,7 +2,7 @@ import 'package:easy_ads_flutter/easy_ads_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../controllers/config/config_controllers.dart';
+import '../../features/config/providers/config_providers.dart';
 import '../logger/app_logger.dart';
 
 final loadInterstitalAd =

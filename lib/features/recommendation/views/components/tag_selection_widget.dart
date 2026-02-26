@@ -1,0 +1,78 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:news_pro/core/constants/app_defaults.dart';
+import 'package:news_pro/features/tag/providers/tags_controller.dart';
+import 'package:visibility_detector/visibility_detector.dart';
+
+class TagSelectionWidget extends ConsumerWidget {
+  const TagSelectionWidget({
+    super.key,
+    required this.selectedIds,
+    required this.onToggle,
+  });
+
+  final Set<int> selectedIds;
+  final Function(int) onToggle;
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final tagsState = ref.watch(tagsController);
+
+    if (tagsState.items.isEmpty) {
+      if (tagsState.initialLoaded == false && tagsState.isPaginationLoading) {
+        return const Center(child: CircularProgressIndicator());
+      }
+      return const SizedBox();
+    }
+
+    return Column(
+      children: [
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: AppDefaults.padding),
+          child: Wrap(
+            spacing: 8,
+            runSpacing: 8,
+            children: tagsState.items.map((tag) {
+              final isSelected = selectedIds.contains(tag.id);
+              return FilterChip(
+                label: Text(tag.name),
+                selected: isSelected,
+                onSelected: (bool value) => onToggle(tag.id),
+                showCheckmark: false,
+                checkmarkColor: Colors.white,
+                selectedColor: Theme.of(context).primaryColor,
+                labelStyle: TextStyle(
+                  color: isSelected ? Colors.white : null,
+                  fontWeight: isSelected ? FontWeight.bold : FontWeight.normal,
+                ),
+                backgroundColor: Theme.of(context).cardColor,
+                side: BorderSide(
+                  color: isSelected
+                      ? Theme.of(context).primaryColor
+                      : Theme.of(context).dividerColor.withValues(alpha: 0.5),
+                ),
+                padding: const EdgeInsets.all(8),
+              );
+            }).toList(),
+          ),
+        ),
+        if (!tagsState.hasReachedMax)
+          VisibilityDetector(
+            key: const Key('tag_loader'),
+            onVisibilityChanged: (info) {
+              if (info.visibleFraction > 0.1 &&
+                  !tagsState.isPaginationLoading) {
+                ref.read(tagsController.notifier).getPosts();
+              }
+            },
+            child: tagsState.isPaginationLoading
+                ? const Padding(
+                    padding: EdgeInsets.all(8.0),
+                    child: Center(child: CircularProgressIndicator()),
+                  )
+                : const SizedBox(height: 50, width: double.infinity),
+          ),
+      ],
+    );
+  }
+}

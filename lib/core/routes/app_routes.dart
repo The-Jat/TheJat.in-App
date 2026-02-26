@@ -21,4 +21,5 @@ class AppRoutes {
   static const String contact = '/contact';
   static const String viewImageFullScreen = '/viewImageFullScreen';
   static const String allAuthors = '/all_authors';
+  static const String selectYourPreference = '/selectYourPreference';
 }

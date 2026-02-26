@@ -3,9 +3,9 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:last_pod_player/last_pod_player.dart';
 
 import '../constants/constants.dart';
-import '../controllers/video/now_playing_state.dart';
-import '../controllers/video/video_controller.dart';
-import '../models/article.dart';
+import '../../features/video/now_playing_state.dart';
+import '../../features/video/video_controller.dart';
+import '../../features/posts/data/models/article_model.dart';
 import '../routes/app_routes.dart';
 import '../utils/responsive.dart';
 

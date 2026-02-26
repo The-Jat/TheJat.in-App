@@ -3,8 +3,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:last_pod_player/pod_player.dart';
 
 import '../constants/app_colors.dart';
-import '../controllers/video/video_controller.dart';
-import '../models/article.dart';
+import '../../features/video/video_controller.dart';
+import '../../features/posts/data/models/article_model.dart';
 import 'app_loader.dart';
 import 'network_image.dart';
 

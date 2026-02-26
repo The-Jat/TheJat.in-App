@@ -1,10 +1,11 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:news_pro/core/analytics/analytics_controller.dart';
 
-import '../controllers/config/config_controllers.dart';
-import '../controllers/wp_ad/wp_ad_controller.dart';
-import '../models/wp_ad.dart';
+import '../../features/config/providers/config_providers.dart';
+import '../../features/wp_ad/providers/wp_ad_providers.dart';
+import '../../features/wp_ad/data/models/wp_ad.dart';
 import '../utils/app_utils.dart';
 import '../utils/responsive.dart';
 import 'ad_widgets.dart';
@@ -129,7 +130,10 @@ class _TheBannerAd extends StatelessWidget {
           child: Material(
             color: Colors.transparent,
             child: InkWell(
-              onTap: () => AppUtils.openLink(ad.adTarget),
+              onTap: () {
+                AnalyticsController.logAdClick(ad.adTarget, 'Banner');
+                AppUtils.openLink(ad.adTarget);
+              },
             ),
           ),
         ),
@@ -162,7 +166,10 @@ class _TheLargeBannerAD extends StatelessWidget {
             child: Material(
               color: Colors.transparent,
               child: InkWell(
-                onTap: () => AppUtils.openLink(ad.adTarget),
+                onTap: () {
+                  AnalyticsController.logAdClick(ad.adTarget, 'Large Banner');
+                  AppUtils.openLink(ad.adTarget);
+                },
               ),
             ),
           ),

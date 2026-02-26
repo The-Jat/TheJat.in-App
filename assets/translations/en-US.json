@@ -253,5 +253,21 @@
     "failed_get_storage_info": "Failed to get storage info: {error}",
     "save_for_offline_reading": "Save for Offline Reading",
     "saved_for_offline_reading": "Saved for offline reading",
-    "remove_from_offline": "Remove from Offline"
+    "remove_from_offline": "Remove from Offline",
+    "for_you": "For You",
+    "recommendation_preference": "Recommendation Preference",
+    "personalize_feed": "Personalize your feed",
+    "select_categories": "Select Categories",
+    "select_authors": "Select Authors",
+    "save_and_continue": "Save and Continue",
+    "error_personalize": "Error personalizing feed: {error}",
+    "select_at_least_one_category": "Select at least one category",
+    "select_at_least_one_author": "Select at least one author",
+    "authors": "Authors",
+    "load_more": "Load more...",
+    "tags": "Tags",
+    "save_preferences":"Save Preferences",
+    "unsaved_changes": "Unsaved Changes",
+    "unsaved_changes_message": "You have unsaved changes. Are you sure you want to discard them?",
+    "discard": "Discard"
 }

@@ -10,13 +10,14 @@ import 'package:path_provider/path_provider.dart';
 
 import 'config/wp_config.dart';
 import 'core/localization/app_locales.dart';
-import 'core/models/notification_model.dart';
 import 'core/routes/app_routes.dart';
 import 'core/routes/on_generate_route.dart';
 import 'core/themes/theme_constants.dart';
 import 'core/utils/app_utils.dart';
 import 'core/utils/extensions.dart';
-import 'views/others/update_page.dart';
+import 'features/notification/data/models/notification_model.dart';
+import 'features/others/update_page.dart';
+import 'features/posts/data/repository/post_style_local.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -27,6 +28,7 @@ void main() async {
   Directory appDocDir = await getApplicationDocumentsDirectory();
   await Hive.initFlutter(appDocDir.path);
   Hive.registerAdapter(NotificationModelAdapter());
+  await PostStyleRepository().init();
   runApp(
     UpdatePage(
       child: ProviderScope(

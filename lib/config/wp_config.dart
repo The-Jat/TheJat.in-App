@@ -7,7 +7,7 @@ class WPConfig {
   /// The url of your app, should not inclued any '/' slash or any 'https://' or 'http://'
   /// Otherwise it may break the compaitbility, And your website must be
   /// a wordpress website.
-  static const String url = 'thejat.in';
+  static const String url = 'news.momin.pro';
 
   /// Your onesignal id
   static const String oneSignalId = '9640bb7f-addb-4b15-87ea-8ea8981aa0d9';
@@ -25,4 +25,12 @@ class WPConfig {
   /// if this is false, then we will fetch new data and refresh the
   /// list if user changes tab or click on one
   static bool enableHomeTabCache = true;
+
+  /// Default image url
+  static const String noImageUrl =
+      'https://newspro.uixxy.com/wp-content/uploads/2022/08/newspro_default_image.png';
+
+  /// Default category image url
+  static String defaultCategoryImage =
+      'https://newspro.uixxy.com/wp-content/uploads/2022/08/newspro_default_category.png';
 }

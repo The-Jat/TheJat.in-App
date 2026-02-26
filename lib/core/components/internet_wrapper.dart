@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../../views/home/home_page/components/internet_not_available.dart';
-import '../controllers/internet/internet_state_provider.dart';
+import '../../features/home/views/components/internet_not_available.dart';
+import '../../features/internet/internet_state_provider.dart';
 import '../routes/unknown_page.dart';
 
 class InternetWrapper extends ConsumerWidget {

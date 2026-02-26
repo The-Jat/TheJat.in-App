@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../constants/constants.dart';
-import '../controllers/category/categories_controller.dart';
-import '../controllers/category/categories_provider.dart';
-import '../models/article.dart';
+import '../../features/categories/providers/categories_controller.dart';
+import '../../features/categories/providers/categories_provider.dart';
+import '../../features/posts/data/models/article_model.dart';
 import '../utils/app_utils.dart';
 import 'animated_page_switcher.dart';
 import 'app_shimmer.dart';
@@ -54,9 +54,9 @@ class ArticleCategoryRow extends ConsumerWidget {
                         AppUtils.trimHtml(theCategories[index].name),
                         style: useEnhancedStyling
                             ? Theme.of(context).textTheme.bodySmall?.copyWith(
-                                color: AppColors.primary,
-                                fontWeight: FontWeight.w600,
-                              )
+                                  color: AppColors.primary,
+                                  fontWeight: FontWeight.w600,
+                                )
                             : Theme.of(context).textTheme.bodySmall,
                       ),
                       side: BorderSide(

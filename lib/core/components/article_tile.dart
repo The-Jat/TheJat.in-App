@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:news_pro/core/components/article_tile_large.dart';
-import '../controllers/config/config_controllers.dart';
+import '../../features/config/providers/config_providers.dart';
 
 import '../../../../core/constants/constants.dart';
-import '../models/article.dart';
+import '../../features/posts/data/models/article_model.dart';
 import '../routes/app_routes.dart';
 import '../utils/app_utils.dart';
 import 'article_category_row.dart';
